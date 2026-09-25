@@ -1,0 +1,320 @@
+* {
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+}
+
+button {
+    background-color: #dd2f45; /* cool color alternative #5865f2 */
+    border: none;
+    color: white;
+}
+
+button:hover {
+    background-color: #cf273c; /* anotha one #4855e0 */
+    cursor: pointer;
+}
+
+#main {
+    width: 350px;
+    height: 250px;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+
+#main::-webkit-scrollbar {
+    display: none;
+}
+
+.task-adding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#control-options {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    vertical-align: bottom;
+}
+
+#breathe-button, #sort-deadline-btn, #clear-button, #pomodoro-timer, #task-adder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+}
+
+#task-adder {
+    margin-right: 0;
+}
+
+#sort-deadline-btn {
+    font-size: 18px;
+}
+
+#face-img, #trash-img, #timer-img {
+    margin-top: 0;
+}
+
+.tasks {
+    margin-right: 5px;
+    vertical-align: middle;
+    accent-color: #dd2f45; /* #5865f2 */
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    position: relative;
+}
+
+.task-text {
+    font-size: 0.9rem;
+    color: #333;
+    flex: 1;
+    word-break: break-word;
+}
+
+.task-category-tag {
+    font-size: 0.7rem;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.task-category-tag:hover {
+    filter: brightness(0.9);
+}
+
+.task-category-tag.active-filter {
+    box-shadow: 0 0 0 2px #dd2f45;
+}
+
+.task-deadline-text {
+    font-size: 0.75rem;
+    color: #888;
+    margin-right: 6px;
+}
+
+.action-btn {
+    background-color: #dd2f45;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    margin-left: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.task-item:hover .action-btn {
+    opacity: 1;
+}
+
+.action-btn:hover {
+    background-color: #cf273c;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.confetti-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #dd2f45;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99;
+    animation: confetti-pop 0.8s ease-out forwards;
+}
+
+@keyframes confetti-pop {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0.3);
+    }
+}
+
+#enter-button, #save-edit-button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+#are-you-sure {
+    border: none;
+    padding: 10px 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#clear-text-pop {
+    height: 80px;
+    margin-top: 30px;
+}
+
+#delete-popup {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sure-btn {
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#mediate {
+    height: 250px;
+    width: 250px;
+    border: none;
+    text-align: center;
+}
+
+#end-meditate {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#medita-btn {
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #dd2f45;
+    animation: breathe 7s ease 1s infinite alternate forwards;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+#dialog-box, #edit-dialog-box {
+    border: none;
+    padding: 16px;
+    width: 220px;
+    height: auto;
+    border-radius: 12px;
+}
+
+#dialog-box::-webkit-scrollbar, #edit-dialog-box::-webkit-scrollbar {
+    display: none;
+}
+
+#pomodoro-time-win {
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    border: none;
+    border-radius: 12px;
+}
+
+#time {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #dd2f45;
+}
+
+.pomo-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-timer {
+    width: 80px;
+    border-radius: 7px;
+    margin-right: 3px;
+    padding: 2px 5px;
+}
+
+#pause-timer {
+    border-radius: 50%;
+    padding: 3px 9px;
+}
+
+#close {
+    border-radius: 50%;
+    padding: 3px 9px;
+    margin-left: 3px;
+}
+
+.task-input, .edit-task-input {
+    min-height: 50px;
+    max-height: 80px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+    font-size: 0.85rem;
+    overflow-y: auto;
+    background-color: #ffffff;
+    margin-bottom: 8px;
+}
+
+#task-category-input, #task-deadline-input,
+#edit-category-input, #edit-deadline-input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.task-input::-webkit-scrollbar, .edit-task-input::-webkit-scrollbar {
+    display: none;
+}

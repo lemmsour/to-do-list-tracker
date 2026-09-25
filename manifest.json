@@ -1,0 +1,27 @@
+{
+    "name": "To do list",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "alarms",
+        "notifications"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "description": "A simple extension that can track tasks", 
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+
+        }
+    },
+    "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    }
+}

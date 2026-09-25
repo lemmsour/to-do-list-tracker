@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main">
+        <div class="task-adding-header">
+            <h2>Add Task</h2>
+            <div id="control-options">
+                <button id="breathe-button" class="button" title="Meditation"><img src="./assets/face.svg" width="20px" height="18px" id="face-img"></button>
+                <button id="sort-deadline-btn" class="button" title="Sort by deadline"><span id="sort-arrow">↕</span></button>
+                <button id="clear-button" title="Delete tasks" class="button"><img src="./assets/trash.svg" width="20px" height="20px" id="trash-img"></button>
+                <button id="pomodoro-timer" title="Pomodoro Timer" class="button"><img src="./assets/timer.svg" width="20px" height="15px" id="timer-img"></button>
+                <button id="task-adder" title="Add Task" class="button">+</button>
+            </div>
+        </div>
+        <div id="output"></div>
+    </div>
+        <dialog id="dialog-box">
+            <div class="task-input" contenteditable="true"></div>
+            <input type="text" id="task-category-input" placeholder="Category (e.g. Work)">
+            <input type="date" id="task-deadline-input">
+            <button id="enter-button">Add</button>
+        </dialog>
+        <dialog id="edit-dialog-box">
+            <div class="edit-task-input" contenteditable="true"></div>
+            <input type="text" id="edit-category-input" placeholder="Category">
+            <input type="date" id="edit-deadline-input">
+            <button id="save-edit-button">Save</button>
+        </dialog>
+        <dialog id="pomodoro-time-win">
+            <h2 id="time">00:00</h2>
+            <div class="pomo-controls">
+                <button id="start-timer">Start Timer</button>
+                <button id="pause-timer"><img src="./assets/pause.svg" height="10px" width="10px"></button>
+                <button id="close"><img src="./assets/close.svg" height="10px" width="10px"></button>
+            </div>
+        </dialog>
+        <dialog id="are-you-sure">
+            <div id="clear-text-pop">Are you sure you want to clear your tasks?</div>
+            <div id="delete-popup">
+                <button id="sure-yes" class="sure-btn">Yes, delete</button>
+                <button id="sure-no" class="sure-btn">No, cancel</button>
+            </div>
+        </dialog>
+        <dialog id="mediate">
+            <div><button id="medita-btn"></button></div>
+            <div><button id="end-meditate">End Meditation</button></div>
+        </dialog>
+    <script src="main.js"></script>
+    <script src="pomodoro.js"></script>
+</body>
+</html>
